@@ -1,0 +1,45 @@
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  .copyright {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .6);
+
+    a {
+      color: inherit;
+      margin: 0 6px;
+      text-decoration: none;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+      padding: 3px 0;
+
+      &::before {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, .6);
+        transform: translate(-101%);
+        transition: transform .3s ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          transform: translate(0);
+        }
+      }
+    }
+  }
+}
